@@ -10,7 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <h1>AFC Champions League</h1>
+        <Link href="/">
+          <h1>AFC Champions League</h1>
+        </Link>
         <Link href="/events">Events</Link>
         <Link href="/add-event">Add Event</Link>
         {children}
