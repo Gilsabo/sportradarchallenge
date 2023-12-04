@@ -8,12 +8,13 @@ export default function AddEventForm() {
   const [homeTeam, setHomeTeam] = useState('');
   const [awayTeam, setAwayTeam] = useState('');
 
-  console.log(newEvent);
   return (
     <>
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          const newEvent = { dateVenue, timeVenue, homeTeam, awayTeam };
+          console.log(newEvent);
         }}
       >
         <label>
