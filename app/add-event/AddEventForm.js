@@ -1,12 +1,13 @@
 'use client';
-
 import { useState } from 'react';
+import { useAppContext } from '../AppProvider';
 
 export default function AddEventForm() {
   const [dateVenue, setDateVenue] = useState('');
   const [timeVenue, setTimeVenue] = useState('');
   const [homeTeam, setHomeTeam] = useState('');
   const [awayTeam, setAwayTeam] = useState('');
+  const { addEvent } = useAppContext();
 
   return (
     <>
@@ -14,7 +15,8 @@ export default function AddEventForm() {
         onSubmit={(e) => {
           e.preventDefault();
           const newEvent = { dateVenue, timeVenue, homeTeam, awayTeam };
-          console.log(newEvent);
+          addEvent(newEvent);
+          console.log('newEvent', newEvent);
         }}
       >
         <label>
