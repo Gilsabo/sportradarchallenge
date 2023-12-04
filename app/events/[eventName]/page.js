@@ -10,12 +10,29 @@ export default function eventName(props) {
   const awayTeamSlug = splitSlugs[1];
 
   console.log('homeTeamSlug', homeTeamSlug, 'awayTeamSlug', awayTeamSlug);
-  const findEvent = sportEvents.find(
+  const findEventInformations = sportEvents.find(
     (sportEvent) =>
       sportEvent.homeTeam?.slug === homeTeamSlug ||
       sportEvent.homeTeam === null,
   );
-  console.log('findEvent', findEvent);
+  console.log('findEventInformations', findEventInformations);
 
-  return <div>eventName</div>;
+  return (
+    <div>
+      <div>
+        <>
+          <div>Competition{findEventInformations.originCompetitionName}</div>
+          <div>{findEventInformations.stage.id}</div>
+          <div>
+            Result {findEventInformations.homeTeam?.officialName}{' '}
+            {findEventInformations.homeTeam?.teamCountryCode}{' '}
+            {findEventInformations.result?.homeGoals}{' '}
+            {findEventInformations.awayTeam?.officialName}{' '}
+            {findEventInformations.awayTeam?.teamCountryCode}{' '}
+            {findEventInformations.result?.awayGoals}
+          </div>
+        </>
+      </div>
+    </div>
+  );
 }
