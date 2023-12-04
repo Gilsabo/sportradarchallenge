@@ -14,7 +14,12 @@ export default function AddEventForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const newEvent = { dateVenue, timeVenue, homeTeam, awayTeam };
+          const newEvent = {
+            timeVenueUTC: timeVenue,
+            dateVenue,
+            homeTeam: { officialName: homeTeam },
+            awayTeam: { officialName: awayTeam },
+          };
           addEvent(newEvent);
           console.log('newEvent', newEvent);
         }}
