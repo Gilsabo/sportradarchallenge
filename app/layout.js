@@ -1,5 +1,6 @@
 import './globals.css';
 import Link from 'next/link';
+import { AppProvider } from './AppProvider';
 
 export const metadata = {
   title: 'Gil Sala Bordallo',
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
         </Link>
         <Link href="/events">Events</Link>
         <Link href="/add-event">Add Event</Link>
-        {children}
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
