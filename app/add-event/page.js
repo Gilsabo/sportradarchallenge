@@ -1,3 +1,9 @@
+import AddEventForm from './AddEventForm';
+
 export default function AddEvent() {
-  return <div>AddEvent</div>;
+  return (
+    <div>
+      <AddEventForm />
+    </div>
+  );
 }
