@@ -22,7 +22,8 @@ export default function EventNameInformation(props) {
   return (
     <section className="flex flex-col items-center mt-8">
       <div className="mb-2">
-        Competition {findEventInformations.originCompetitionName}
+        Competition {findEventInformations.originCompetitionName}{' '}
+        {findEventInformations.season}
       </div>
       <div className="mb-2">{findEventInformations.stage.id}</div>
       <div>
