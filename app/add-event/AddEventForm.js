@@ -31,6 +31,7 @@ export default function AddEventForm() {
         <label className="mb-4">
           Date venue
           <input
+            className="ml-2"
             type="date"
             value={dateVenue}
             onChange={(e) => setDateVenue(e.currentTarget.value)}
@@ -39,6 +40,7 @@ export default function AddEventForm() {
         <label className="mb-4">
           Time venue (UTC format)
           <input
+            className="ml-2"
             type="time"
             value={timeVenue}
             onChange={(e) => setTimeVenue(e.currentTarget.value)}
@@ -47,6 +49,7 @@ export default function AddEventForm() {
         <label className="mb-4">
           Home team
           <input
+            className="ml-2"
             type="text"
             value={homeTeam}
             onChange={(e) => setHomeTeam(e.currentTarget.value)}
@@ -55,6 +58,7 @@ export default function AddEventForm() {
         <label className="mb-4">
           Away team
           <input
+            className="ml-2"
             type="text"
             value={awayTeam}
             onChange={(e) => setAwayTeam(e.currentTarget.value)}
