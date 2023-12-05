@@ -20,7 +20,7 @@ export default function EventNameInformation(props) {
   console.log('findEventInformations', findEventInformations);
 
   return (
-    <section>
+    <section className="flex flex-col items-center">
       <div>Competition {findEventInformations.originCompetitionName}</div>
       <div>{findEventInformations.stage.id}</div>
       <div>
