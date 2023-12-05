@@ -43,7 +43,7 @@ export default function AddEventForm() {
             className="ml-6"
             type="time"
             value={timeVenue}
-            onChange={(e) => setTimeVenue(e.currentTarget.value)}
+            onChange={(e) => setTimeVenue(e.currentTarget.value + ':00')}
           />
         </label>
         <label className="mb-4 flex">
