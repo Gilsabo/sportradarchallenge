@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useAppContext } from '../AppProvider';
 
@@ -8,6 +9,7 @@ export default function AddEventForm() {
   const [homeTeam, setHomeTeam] = useState('');
   const [awayTeam, setAwayTeam] = useState('');
   const { addEvent } = useAppContext();
+  const router = useRouter();
 
   return (
     <>
@@ -21,6 +23,7 @@ export default function AddEventForm() {
             awayTeam: { officialName: awayTeam },
           };
           addEvent(newEvent);
+          router.push(`/events`);
           console.log('newEvent', newEvent);
         }}
       >
