@@ -12,7 +12,7 @@ export default function EventsInformation() {
       {sportEvents.map((sportevent) =>
         sportevent.homeTeam && sportevent.awayTeam ? (
           <section
-            className="mb-4"
+            className="mb-4 border w-72 border-white  rounded px-4 py-4"
             key={`sportevent-div-${sportevent.dateVenue}-${
               sportevent.homeTeam?.slug || 'to-be-confirmed'
             }-vs-${sportevent.awayTeam?.slug || 'to-be-confirmed'}`}
@@ -29,7 +29,7 @@ export default function EventsInformation() {
           </section>
         ) : (
           <section
-            className="mb-4"
+            className="mb-4 border w-72 border-white  rounded px-4 py-4"
             key={`sportevent-div-${
               sportevent.homeTeam ? sportevent.homeTeam.officialName : ''
             }-vs-${
