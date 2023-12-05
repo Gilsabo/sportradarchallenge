@@ -1,8 +1,9 @@
-import sportData from '../../../public/sportData.json';
+'use client';
+import { useAppContext } from '../../AppProvider';
 
 export default function EventNameInformation(props) {
   console.log('propiiis', props);
-  const sportEvents = sportData.data;
+  const { sportEvents } = useAppContext();
   console.log('params', props.params.eventName);
   const slugsWithoutVs = props.params.eventName.replace('-vs-', ' ');
   console.log('slugWithoutVs', slugsWithoutVs);
