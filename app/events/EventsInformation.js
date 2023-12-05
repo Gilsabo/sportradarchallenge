@@ -20,8 +20,10 @@ export default function EventsInformation() {
             <Link
               href={`events/${sportevent.homeTeam.slug}-vs-${sportevent.awayTeam.slug}`}
             >
-              <div className="absolute top-2">{sportevent.dateVenue}</div>
-              <div className="absolute top-2 right-2">
+              <div className="absolute top-2 text-xs">
+                {sportevent.dateVenue}
+              </div>
+              <div className="absolute top-2 right-2 text-xs">
                 {sportevent.timeVenueUTC}
               </div>
               <div className="mt-4">{sportevent.homeTeam.officialName}</div>
@@ -49,8 +51,10 @@ export default function EventsInformation() {
                   : 'to-be-confirmed'
               }`}
             >
-              <div className="absolute top-2">{sportevent.dateVenue}</div>
-              <div className="absolute top-2 right-2">
+              <div className="absolute top-2 text-xs">
+                {sportevent.dateVenue}
+              </div>
+              <div className="absolute top-2 right-2 text-xs">
                 {sportevent?.timeVenueUTC || 'tbc'}
               </div>
               {sportevent.homeTeam !== null ? (
