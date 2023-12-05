@@ -8,11 +8,11 @@ export default function EventsInformation() {
   console.log('sporteeventsss', sportEvents);
 
   return (
-    <div className="flex flex-col items-center mt-8 text-center">
+    <div className="flex flex-col items-center mt-8 md:flex-row md:flex-wrap md:justify-center text-center">
       {sportEvents.map((sportevent) =>
         sportevent.homeTeam && sportevent.awayTeam ? (
           <section
-            className="relative mb-4 border w-72 border-white  rounded px-4 py-4"
+            className="relative mb-4 border w-96 border-white  rounded px-4 py-4 md:mx-4"
             key={`sportevent-div-${sportevent.dateVenue}-${
               sportevent.homeTeam?.slug || 'to-be-confirmed'
             }-vs-${sportevent.awayTeam?.slug || 'to-be-confirmed'}`}
@@ -33,7 +33,7 @@ export default function EventsInformation() {
           </section>
         ) : (
           <section
-            className="relative mb-4 border w-72 border-white  rounded px-4 py-4"
+            className="relative mb-4 border w-96 border-white  rounded px-4 py-4 md:mx-4"
             key={`sportevent-div-${
               sportevent.homeTeam ? sportevent.homeTeam.officialName : ''
             }-vs-${
