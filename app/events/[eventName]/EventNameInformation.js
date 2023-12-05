@@ -26,10 +26,12 @@ export default function EventNameInformation(props) {
       <div>
         Result{' '}
         {findEventInformations.homeTeam?.officialName || 'not played yet'}{' '}
-        {findEventInformations.homeTeam?.teamCountryCode || 'to be confirmed'}{' '}
+        {`(${
+          findEventInformations.homeTeam?.teamCountryCode || 'to be confirmed'
+        })`}{' '}
         {findEventInformations.result?.homeGoals} <spans>vs.</spans>{' '}
-        {findEventInformations.awayTeam?.officialName}
-        {findEventInformations.awayTeam?.teamCountryCode}{' '}
+        {findEventInformations.awayTeam?.officialName}{' '}
+        {`(${findEventInformations.awayTeam?.teamCountryCode})`}{' '}
         {findEventInformations.result?.awayGoals}
       </div>
     </section>
