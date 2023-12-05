@@ -2,8 +2,8 @@ import EventNameInformation from './EventNameInformation';
 
 export default function EventName(props) {
   return (
-    <div>
+    <main>
       <EventNameInformation params={props.params} />
-    </div>
+    </main>
   );
 }
