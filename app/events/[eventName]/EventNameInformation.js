@@ -20,21 +20,18 @@ export default function EventNameInformation(props) {
   console.log('findEventInformations', findEventInformations);
 
   return (
-    <div>
+    <section>
+      <div>Competition {findEventInformations.originCompetitionName}</div>
+      <div>{findEventInformations.stage.id}</div>
       <div>
-        <>
-          <div>Competition{findEventInformations.originCompetitionName}</div>
-          <div>{findEventInformations.stage.id}</div>
-          <div>
-            Result {findEventInformations.homeTeam?.officialName}{' '}
-            {findEventInformations.homeTeam?.teamCountryCode}{' '}
-            {findEventInformations.result?.homeGoals}{' '}
-            {findEventInformations.awayTeam?.officialName}{' '}
-            {findEventInformations.awayTeam?.teamCountryCode}{' '}
-            {findEventInformations.result?.awayGoals}
-          </div>
-        </>
+        Result{' '}
+        {findEventInformations.homeTeam?.officialName || 'not played yet'}{' '}
+        {findEventInformations.homeTeam?.teamCountryCode || 'to be confirmed'}{' '}
+        {findEventInformations.result?.homeGoals} <spans>vs.</spans>{' '}
+        {findEventInformations.awayTeam?.officialName}
+        {findEventInformations.awayTeam?.teamCountryCode}{' '}
+        {findEventInformations.result?.awayGoals}
       </div>
-    </div>
+    </section>
   );
 }
