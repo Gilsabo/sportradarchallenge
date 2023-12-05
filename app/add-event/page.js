@@ -2,8 +2,8 @@ import AddEventForm from './AddEventForm';
 
 export default function AddEvent() {
   return (
-    <div>
+    <main>
       <AddEventForm />
-    </div>
+    </main>
   );
 }
