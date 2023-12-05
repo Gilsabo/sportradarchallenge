@@ -18,10 +18,16 @@ export default function RootLayout({ children }) {
             </h1>
           </Link>
           <div className="flex">
-            <Link className="mt-4 mr-2 font-semibold" href="/events">
+            <Link
+              className="mt-4 mr-2 hover:text-red-500 font-semibold"
+              href="/events"
+            >
               Events
             </Link>
-            <Link className="mt-4 ml-2 font-semibold" href="/add-event">
+            <Link
+              className="mt-4 ml-2 hover:text-red-500 font-semibold"
+              href="/add-event"
+            >
               Add Event
             </Link>
           </div>
