@@ -14,6 +14,7 @@ export default function AddEventForm() {
   return (
     <>
       <form
+        className="flex flex-col items-center mt-8"
         onSubmit={(e) => {
           e.preventDefault();
           const newEvent = {
@@ -27,7 +28,7 @@ export default function AddEventForm() {
           console.log('newEvent', newEvent);
         }}
       >
-        <label>
+        <label className="mb-4">
           Date venue
           <input
             type="date"
@@ -35,7 +36,7 @@ export default function AddEventForm() {
             onChange={(e) => setDateVenue(e.currentTarget.value)}
           />
         </label>
-        <label>
+        <label className="mb-4">
           Time venue (UTC format)
           <input
             type="time"
@@ -43,7 +44,7 @@ export default function AddEventForm() {
             onChange={(e) => setTimeVenue(e.currentTarget.value)}
           />
         </label>
-        <label>
+        <label className="mb-4">
           Home team
           <input
             type="text"
@@ -51,7 +52,7 @@ export default function AddEventForm() {
             onChange={(e) => setHomeTeam(e.currentTarget.value)}
           />
         </label>
-        <label>
+        <label className="mb-4">
           Away team
           <input
             type="text"
