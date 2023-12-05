@@ -12,7 +12,7 @@ export default function EventsInformation() {
       {sportEvents.map((sportevent) =>
         sportevent.homeTeam && sportevent.awayTeam ? (
           <section
-            className="mb-4 border w-72 border-white  rounded px-4 py-4"
+            className="relative mb-4 border w-72 border-white  rounded px-4 py-4"
             key={`sportevent-div-${sportevent.dateVenue}-${
               sportevent.homeTeam?.slug || 'to-be-confirmed'
             }-vs-${sportevent.awayTeam?.slug || 'to-be-confirmed'}`}
@@ -20,16 +20,18 @@ export default function EventsInformation() {
             <Link
               href={`events/${sportevent.homeTeam.slug}-vs-${sportevent.awayTeam.slug}`}
             >
-              <div>{sportevent.dateVenue}</div>
-              <div>{sportevent.timeVenueUTC}</div>
-              <div>{sportevent.homeTeam.officialName}</div>
+              <div className="absolute top-2">{sportevent.dateVenue}</div>
+              <div className="absolute top-2 right-2">
+                {sportevent.timeVenueUTC}
+              </div>
+              <div className="mt-4">{sportevent.homeTeam.officialName}</div>
               <span>vs.</span>
               <div>{sportevent.awayTeam.officialName}</div>
             </Link>
           </section>
         ) : (
           <section
-            className="mb-4 border w-72 border-white  rounded px-4 py-4"
+            className="relative mb-4 border w-72 border-white  rounded px-4 py-4"
             key={`sportevent-div-${
               sportevent.homeTeam ? sportevent.homeTeam.officialName : ''
             }-vs-${
@@ -47,11 +49,11 @@ export default function EventsInformation() {
                   : 'to-be-confirmed'
               }`}
             >
-              <div>{sportevent.dateVenue}</div>
+              <div className="absolute top-2">{sportevent.dateVenue}</div>
               {sportevent.homeTeam !== null ? (
                 <div>{sportevent.homeTeam.officialName}</div>
               ) : (
-                <div>to be confirmed</div>
+                <div className="mt-4">to be confirmed</div>
               )}
               <span>vs.</span>
               {sportevent.awayTeam !== null ? (
