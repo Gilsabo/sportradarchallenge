@@ -50,6 +50,9 @@ export default function EventsInformation() {
               }`}
             >
               <div className="absolute top-2">{sportevent.dateVenue}</div>
+              <div className="absolute top-2 right-2">
+                {sportevent?.timeVenueUTC || 'tbc'}
+              </div>
               {sportevent.homeTeam !== null ? (
                 <div>{sportevent.homeTeam.officialName}</div>
               ) : (
