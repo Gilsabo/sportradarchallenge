@@ -20,9 +20,11 @@ export default function EventNameInformation(props) {
   console.log('findEventInformations', findEventInformations);
 
   return (
-    <section className="flex flex-col items-center mt-4">
-      <div>Competition {findEventInformations.originCompetitionName}</div>
-      <div>{findEventInformations.stage.id}</div>
+    <section className="flex flex-col items-center mt-8">
+      <div className="mb-2">
+        Competition {findEventInformations.originCompetitionName}
+      </div>
+      <div className="mb-2">{findEventInformations.stage.id}</div>
       <div>
         Result{' '}
         {findEventInformations.homeTeam?.officialName || 'not played yet'}{' '}
