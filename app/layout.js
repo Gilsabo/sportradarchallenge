@@ -13,16 +13,18 @@ export default function RootLayout({ children }) {
       <body className="bg-blue-900 text-white">
         <nav className="flex flex-col items-center mt-12">
           <Link href="/">
-            <h1 className="font-extrabold text-3xl text-red-500">
+            <h1 className="font-extrabold text-3xl text-center text-red-500">
               AFC Champions League
             </h1>
           </Link>
-          <Link className="mt-4 font-semibold" href="/events">
-            Events
-          </Link>
-          <Link className="mt-4 font-semibold" href="/add-event">
-            Add Event
-          </Link>
+          <div className="flex">
+            <Link className="mt-4 mr-2 font-semibold" href="/events">
+              Events
+            </Link>
+            <Link className="mt-4 ml-2 font-semibold" href="/add-event">
+              Add Event
+            </Link>
+          </div>
         </nav>
         <AppProvider>{children}</AppProvider>
       </body>
