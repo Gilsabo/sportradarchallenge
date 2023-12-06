@@ -1,77 +1,103 @@
 'use client';
-
 import Link from 'next/link';
 import { useAppContext } from '../AppProvider';
 
 export default function EventsInformation() {
   const { sportEvents } = useAppContext();
-  console.log('sporteeventsss', sportEvents);
+
+  const daysOfDecemberWithEvents = () => {
+    const dateVenueWithEvents = [];
+
+    for (let i = 1; i <= 31; i++) {
+      const dayNumber = i < 10 ? `0${i}` : `${i}`;
+      const dateVenue = `2023-12-${dayNumber}`;
+
+      // Check if any event matches the current dateVenue
+      const matchingEvent = sportEvents.find(
+        (sportEvent) => sportEvent.dateVenue === dateVenue,
+      );
+      if (matchingEvent) {
+        dateVenueWithEvents.push({
+          dateVenue: dateVenue,
+          timeVenueUTC: matchingEvent.timeVenueUTC,
+          homeTeam: matchingEvent.homeTeam?.officialName,
+          homeTeamSlug: matchingEvent.homeTeam?.slug,
+          awayTeam: matchingEvent.awayTeam?.officialName,
+          awayTeamSlug: matchingEvent.awayTeam?.slug,
+        });
+      } else {
+        dateVenueWithEvents.push({ dateVenue: dateVenue });
+      }
+    }
+    return dateVenueWithEvents;
+  };
+  const calendarWithEvents = daysOfDecemberWithEvents();
 
   return (
-    <div className="flex flex-col items-center mt-8 text-center md:flex-row md:flex-wrap md:justify-center lg:flex-row lg:flex-wrap">
-      {sportEvents.map((sportevent) =>
-        sportevent.homeTeam && sportevent.awayTeam ? (
-          <section
-            className="relative mb-4 border w-96 border-white rounded px-4 py-4 md:mx-4 md:w-80 lg:w-72 lg:mx-8 lg:my-4"
-            key={`sportevent-div-${sportevent.dateVenue}-${
-              sportevent.homeTeam?.slug || 'to-be-confirmed'
-            }-vs-${sportevent.awayTeam?.slug || 'to-be-confirmed'}`}
-          >
+    <>
+      <div className="w-full flex flex-wrap justify-center mt-8">
+        {calendarWithEvents.map((calendarWithEvent) => {
+          return calendarWithEvent.homeTeam && calendarWithEvent.awayTeam ? (
             <Link
-              href={`events/${sportevent.homeTeam.slug}-vs-${sportevent.awayTeam.slug}`}
+              href={`events/${calendarWithEvent.homeTeamSlug}-vs-${calendarWithEvent.awayTeamSlug}`}
             >
-              <div className="absolute top-2 text-xs">
-                {sportevent.dateVenue}
+              <div
+                key={`event-div${calendarWithEvent.homeTeam}-vs${calendarWithEvent.awayTeam}`}
+                className="relative p-6 w-64 h-44 mx-4 my-4 shadow-sm bg-blue-800 shadow-blue-800"
+              >
+                <div className="text-xs absolute">
+                  {calendarWithEvent.dateVenue}
+                </div>
+                <div className="text-xs absolute right-6">
+                  {calendarWithEvent.timeVenueUTC}
+                </div>
+                <div className="mt-8">
+                  <div>{calendarWithEvent?.homeTeam?.toUpperCase()}</div>
+
+                  <div>{calendarWithEvent?.awayTeam?.toUpperCase()}</div>
+                </div>
               </div>
-              <div className="absolute top-2 right-2 text-xs">
-                {sportevent.timeVenueUTC}
-              </div>
-              <div className="mt-4">{sportevent.homeTeam.officialName}</div>
-              <span>vs.</span>
-              <div>{sportevent.awayTeam.officialName}</div>
             </Link>
-          </section>
-        ) : (
-          <section
-            className="relative mb-4 border w-96 border-white rounded px-4 py-4 md:mx-4 md:w-80 lg:w-72 lg:mx-8 lg:my-4"
-            key={`sportevent-div-${
-              sportevent.homeTeam ? sportevent.homeTeam.officialName : ''
-            }-vs-${
-              sportevent.awayTeam ? sportevent.awayTeam.officialName : ''
-            }`}
-          >
+          ) : (
             <Link
               href={`events/${
-                sportevent.homeTeam
-                  ? sportevent.homeTeam.slug
+                calendarWithEvent.homeTeam
+                  ? calendarWithEvent.homeTeamSlug
                   : 'to-be-confirmed'
               }-vs-${
-                sportevent.awayTeam
-                  ? sportevent.awayTeam.slug
+                calendarWithEvent.awayTeam
+                  ? calendarWithEvent.awayTeamSlug
                   : 'to-be-confirmed'
               }`}
             >
-              <div className="absolute top-2 text-xs">
-                {sportevent.dateVenue}
+              <div
+                key={`event-div-${
+                  calendarWithEvent.homeTeam
+                    ? calendarWithEvent.homeTeam.officialName
+                    : ''
+                }-vs-${
+                  calendarWithEvent.awayTeam
+                    ? calendarWithEvent.awayTeam.officialName
+                    : ''
+                }`}
+                className="relative p-6 w-64 h-44 mx-4 my-4 shadow-sm bg-blue-800 shadow-blue-800"
+              >
+                <div className="text-xs absolute">
+                  {calendarWithEvent.dateVenue}
+                </div>
+                <div className="text-xs absolute right-6">
+                  {calendarWithEvent.timeVenueUTC}
+                </div>
+                <div className="mt-8">
+                  <div>{calendarWithEvent?.homeTeam?.toUpperCase()}</div>
+
+                  <div>{calendarWithEvent?.awayTeam?.toUpperCase()}</div>
+                </div>
               </div>
-              <div className="absolute top-2 right-2 text-xs">
-                {sportevent?.timeVenueUTC || 'tbc'}
-              </div>
-              {sportevent.homeTeam !== null ? (
-                <div>{sportevent.homeTeam.officialName}</div>
-              ) : (
-                <div className="mt-4">to be confirmed</div>
-              )}
-              <span>vs.</span>
-              {sportevent.awayTeam !== null ? (
-                <div>{sportevent.awayTeam.officialName}</div>
-              ) : (
-                <div>to be confirmed</div>
-              )}
             </Link>
-          </section>
-        ),
-      )}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
