@@ -25,7 +25,15 @@ export default function EventNameInformation(props) {
         Competition {findEventInformations.originCompetitionName}{' '}
         {findEventInformations.season}
       </div>
-      <div className="mb-2">{findEventInformations.stage.id}</div>
+      <div className="mb-2">
+        {findEventInformations.dateVenue} {findEventInformations.timeVenueUTC}
+      </div>
+      <div className="mb-2">
+        {findEventInformations.stage.id}
+        {findEventInformations.result !== null
+          ? ' (played)'
+          : ' (to be played)'}
+      </div>
       <div className="text-center">
         Result
         <div className="flex flex-col">
