@@ -11,13 +11,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-blue-900 text-white md:mx-10 lg:mx-32">
-        <nav className="flex flex-col items-center mt-12">
+        <div className="flex flex-col items-center mt-12">
           <Link href="/">
-            <h1 className="font-extrabold text-3xl text-center text-red-500">
+            <header className="font-extrabold text-3xl text-center text-red-500">
               AFC Champions League
-            </h1>
+            </header>
           </Link>
-          <div className="flex">
+          <nav className="flex">
             <Link
               className="mt-4 mr-2 hover:text-red-500 font-semibold"
               href="/events"
@@ -30,8 +30,8 @@ export default function RootLayout({ children }) {
             >
               Add Event
             </Link>
-          </div>
-        </nav>
+          </nav>
+        </div>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
