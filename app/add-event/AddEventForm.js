@@ -64,7 +64,9 @@ export default function AddEventForm() {
             onChange={(e) => setAwayTeam(e.currentTarget.value)}
           />
         </label>
-        <button>Add event</button>
+        <button className="border rounded-sm border-white py-1 hover:border-red-500 hover:text-red-500">
+          Add event
+        </button>
       </form>
     </>
   );
