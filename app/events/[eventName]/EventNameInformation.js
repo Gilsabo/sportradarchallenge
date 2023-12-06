@@ -11,6 +11,13 @@ export default function EventNameInformation(props) {
   const homeTeamSlug = splitSlugs[0];
   const awayTeamSlug = splitSlugs[1];
 
+  if (
+    homeTeamSlug === 'to-be-confirmed' &&
+    awayTeamSlug === 'to-be-confirmed'
+  ) {
+    notFound();
+  }
+
   const findEventInformations = sportEvents.find(
     (sportEvent) =>
       sportEvent.homeTeam?.slug === homeTeamSlug ||
