@@ -9,6 +9,7 @@ export default function EventsInformation() {
     const dateVenueWithEvents = [];
 
     for (let i = 1; i <= 31; i++) {
+      // Change date format dynamically to match sportEvents date format
       const dayNumber = i < 10 ? `0${i}` : `${i}`;
       const dateVenue = `2023-12-${dayNumber}`;
 
