@@ -35,6 +35,7 @@ export default function AddEventForm() {
             type="date"
             value={dateVenue}
             onChange={(e) => setDateVenue(e.currentTarget.value)}
+            required
           />
         </label>
         <label className="mb-4 flex">
@@ -44,6 +45,7 @@ export default function AddEventForm() {
             type="time"
             value={timeVenue}
             onChange={(e) => setTimeVenue(e.currentTarget.value + ':00')}
+            required
           />
         </label>
         <label className="mb-4 flex">
@@ -53,6 +55,7 @@ export default function AddEventForm() {
             type="text"
             value={homeTeam}
             onChange={(e) => setHomeTeam(e.currentTarget.value)}
+            required
           />
         </label>
         <label className="mb-4 flex">
@@ -62,6 +65,7 @@ export default function AddEventForm() {
             type="text"
             value={awayTeam}
             onChange={(e) => setAwayTeam(e.currentTarget.value)}
+            required
           />
         </label>
         <button className="border rounded-sm border-white py-1 hover:border-red-500 hover:text-red-500">
