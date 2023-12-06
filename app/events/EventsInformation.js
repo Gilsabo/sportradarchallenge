@@ -36,7 +36,7 @@ export default function EventsInformation() {
 
   return (
     <>
-      <section className="w-full flex flex-wrap justify-center mt-8">
+      <section className="flex flex-wrap justify-center mt-8">
         {calendarWithEvents.map((calendarWithEvent) => {
           return calendarWithEvent.homeTeam && calendarWithEvent.awayTeam ? (
             <Link
