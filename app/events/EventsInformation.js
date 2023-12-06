@@ -36,7 +36,7 @@ export default function EventsInformation() {
 
   return (
     <>
-      <div className="w-full flex flex-wrap justify-center mt-8">
+      <section className="w-full flex flex-wrap justify-center mt-8">
         {calendarWithEvents.map((calendarWithEvent) => {
           return calendarWithEvent.homeTeam && calendarWithEvent.awayTeam ? (
             <Link
@@ -98,7 +98,7 @@ export default function EventsInformation() {
             </Link>
           );
         })}
-      </div>
+      </section>
     </>
   );
 }
