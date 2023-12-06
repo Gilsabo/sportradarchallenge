@@ -31,13 +31,17 @@ export default function EventNameInformation(props) {
         <div className="flex flex-col">
           <div>
             {findEventInformations.homeTeam?.officialName || 'to be confirmed'}{' '}
-            {`(${findEventInformations.homeTeam?.teamCountryCode || 'tbc'})`}{' '}
+            <span className="text-sm">
+              {`(${findEventInformations.homeTeam?.teamCountryCode || 'tbc'})`}{' '}
+            </span>
             {findEventInformations.result?.homeGoals}
           </div>
           <spans>vs.</spans>{' '}
           <div>
             {findEventInformations.awayTeam?.officialName || 'to be confirmed'}{' '}
-            {`(${findEventInformations.awayTeam?.teamCountryCode})` || ''}{' '}
+            <span className="text-sm">
+              {`(${findEventInformations.awayTeam?.teamCountryCode})` || ''}{' '}
+            </span>
             {findEventInformations.result?.awayGoals}
           </div>
         </div>
