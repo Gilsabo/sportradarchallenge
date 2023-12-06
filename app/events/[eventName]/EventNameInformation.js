@@ -38,11 +38,12 @@ export default function EventNameInformation(props) {
         {findEventInformations.status} at {findEventInformations.timeVenueUTC}{' '}
         on {findEventInformations.dateVenue}
       </div>
-      <div className="text-center">
+      <div className="text-center mt-4">
         Result
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-blue-800 mt-4 p-8 shadow-sm">
           <div>
-            {findEventInformations.homeTeam?.officialName || 'to be confirmed'}{' '}
+            {findEventInformations.homeTeam?.officialName.toUpperCase() ||
+              'to be confirmed'}{' '}
             <span className="text-sm">
               {`(${findEventInformations.homeTeam?.teamCountryCode || 'tbc'})`}{' '}
             </span>
@@ -50,7 +51,8 @@ export default function EventNameInformation(props) {
           </div>
           <span>vs.</span>
           <div>
-            {findEventInformations.awayTeam?.officialName || 'to be confirmed'}{' '}
+            {findEventInformations.awayTeam?.officialName.toUpperCase() ||
+              'to be confirmed'}{' '}
             <span className="text-sm">
               {`(${findEventInformations.awayTeam?.teamCountryCode})` || ''}{' '}
             </span>
