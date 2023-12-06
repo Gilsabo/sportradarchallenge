@@ -54,7 +54,6 @@ export default function EventsInformation() {
                 </div>
                 <div className="mt-8">
                   <div>{calendarWithEvent?.homeTeam?.toUpperCase()}</div>
-
                   <div>{calendarWithEvent?.awayTeam?.toUpperCase()}</div>
                 </div>
               </div>
