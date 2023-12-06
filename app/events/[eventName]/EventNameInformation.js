@@ -1,6 +1,7 @@
 'use client';
 import { notFound } from 'next/navigation';
 import { useAppContext } from '../../AppProvider';
+import NotScheduled from './NotScheduled';
 
 export default function EventNameInformation(props) {
   const { sportEvents } = useAppContext();
@@ -15,7 +16,7 @@ export default function EventNameInformation(props) {
     homeTeamSlug === 'to-be-confirmed' &&
     awayTeamSlug === 'to-be-confirmed'
   ) {
-    notFound();
+    return <NotScheduled />;
   }
 
   const findEventInformations = sportEvents.find(
