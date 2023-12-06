@@ -1,6 +1,7 @@
 'use client';
+import NotUpdated from '@/util/NotUpdated';
+import NotScheduled from '../../../util/NotScheduled';
 import { useAppContext } from '../../AppProvider';
-import NotScheduled from './NotScheduled';
 
 export default function EventNameInformation(props) {
   const { sportEvents } = useAppContext();
@@ -12,12 +13,14 @@ export default function EventNameInformation(props) {
   const awayTeamSlug = splitSlugs[1];
 
   if (
-    (homeTeamSlug === 'to-be-confirmed' &&
-      awayTeamSlug === 'to-be-confirmed') ||
-    homeTeamSlug === 'undefined' ||
-    awayTeamSlug === 'undefined'
+    homeTeamSlug === 'to-be-confirmed' &&
+    awayTeamSlug === 'to-be-confirmed'
   ) {
     return <NotScheduled />;
+  }
+
+  if (homeTeamSlug === 'undefined' || awayTeamSlug === 'undefined') {
+    return <NotUpdated />;
   }
 
   const findEventInformations = sportEvents.find(
