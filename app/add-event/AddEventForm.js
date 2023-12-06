@@ -31,7 +31,7 @@ export default function AddEventForm() {
         <label className="mb-4 flex">
           <span>Date venue</span>
           <input
-            className="ml-6"
+            className="ml-6 rounded-sm"
             type="date"
             value={dateVenue}
             onChange={(e) => setDateVenue(e.currentTarget.value)}
@@ -40,7 +40,7 @@ export default function AddEventForm() {
         <label className="mb-4 flex">
           <span>Time venue</span>
           <input
-            className="ml-6"
+            className="ml-6 rounded-sm"
             type="time"
             value={timeVenue}
             onChange={(e) => setTimeVenue(e.currentTarget.value + ':00')}
@@ -49,7 +49,7 @@ export default function AddEventForm() {
         <label className="mb-4 flex">
           <span>Home team</span>
           <input
-            className="ml-6"
+            className="ml-6 rounded-sm"
             type="text"
             value={homeTeam}
             onChange={(e) => setHomeTeam(e.currentTarget.value)}
@@ -58,7 +58,7 @@ export default function AddEventForm() {
         <label className="mb-4 flex">
           <span>Away team</span>
           <input
-            className="ml-6"
+            className="ml-6 rounded-sm"
             type="text"
             value={awayTeam}
             onChange={(e) => setAwayTeam(e.currentTarget.value)}
