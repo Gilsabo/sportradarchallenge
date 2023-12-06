@@ -1,5 +1,4 @@
 'use client';
-import { notFound } from 'next/navigation';
 import { useAppContext } from '../../AppProvider';
 import NotScheduled from './NotScheduled';
 
