@@ -12,8 +12,10 @@ export default function EventNameInformation(props) {
   const awayTeamSlug = splitSlugs[1];
 
   if (
-    homeTeamSlug === 'to-be-confirmed' &&
-    awayTeamSlug === 'to-be-confirmed'
+    (homeTeamSlug === 'to-be-confirmed' &&
+      awayTeamSlug === 'to-be-confirmed') ||
+    homeTeamSlug === 'undefined' ||
+    awayTeamSlug === 'undefined'
   ) {
     return <NotScheduled />;
   }
