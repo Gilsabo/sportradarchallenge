@@ -44,7 +44,7 @@ export default function EventsInformation() {
             >
               <div
                 key={`event-div${calendarWithEvent.homeTeam}-vs${calendarWithEvent.awayTeam}`}
-                className="relative p-6 w-64 h-44 mx-4 my-4 shadow-sm bg-blue-800 shadow-blue-800"
+                className="relative p-6 w-80 md:w-72 lg:w-56 h-44 lg:h-32 mx-2 my-2 shadow-sm bg-blue-800 shadow-blue-800"
               >
                 <div className="text-xs absolute">
                   {calendarWithEvent.dateVenue}
@@ -80,7 +80,7 @@ export default function EventsInformation() {
                     ? calendarWithEvent.awayTeam.officialName
                     : ''
                 }`}
-                className="relative p-6 w-64 h-44 mx-4 my-4 shadow-sm bg-blue-800 shadow-blue-800"
+                className="relative p-6 w-80 md:w-72 lg:w-56 h-44 lg:h-32 mx-2 my-2 shadow-sm bg-blue-800 shadow-blue-800"
               >
                 <div className="text-xs absolute">
                   {calendarWithEvent.dateVenue}
