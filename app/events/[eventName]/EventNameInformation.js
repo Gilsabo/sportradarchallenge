@@ -2,16 +2,14 @@
 import { useAppContext } from '../../AppProvider';
 
 export default function EventNameInformation(props) {
-  console.log('propiiis', props);
   const { sportEvents } = useAppContext();
-  console.log('params', props.params.eventName);
+
   const slugsWithoutVs = props.params.eventName.replace('-vs-', ' ');
-  console.log('slugWithoutVs', slugsWithoutVs);
+
   const splitSlugs = slugsWithoutVs.split(' ');
   const homeTeamSlug = splitSlugs[0];
   const awayTeamSlug = splitSlugs[1];
 
-  console.log('homeTeamSlug', homeTeamSlug, 'awayTeamSlug', awayTeamSlug);
   const findEventInformations = sportEvents.find(
     (sportEvent) =>
       sportEvent.homeTeam?.slug === homeTeamSlug ||
