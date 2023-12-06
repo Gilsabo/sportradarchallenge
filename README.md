@@ -5,11 +5,11 @@ This is the coding exercise for [Sportradar](https://sportradar.com/)
 This is a web app that shows football events from the AFC Champions League
 
 ## Features
-- Calendar View: Displaying events in a calendar format for easy navigation.
-- Event Detail Page: Providing detailed information about a selected event.
-- Event Addition: Users can add an event when the competition takes place (specifically in December).
-- Responsive Design: Ensuring the web app works seamlessly across various devices.
-- Navigation: Basic navigation allowing users to switch between the overview and the add event pages.
+- Calendar View: Displaying events in a calendar format for easy navigation
+- Event Detail Page: Providing detailed information about a selected event
+- Event Addition: Users can add an event when the competition takes place (specifically in December)
+- Responsive Design: Ensuring the web app works seamlessly across various devices
+- Navigation: Basic navigation allowing users to switch between the overview and the add event pages
 
 ## Technologies Used
 - Next.js
