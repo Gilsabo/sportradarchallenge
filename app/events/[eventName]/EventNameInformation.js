@@ -25,7 +25,6 @@ export default function EventNameInformation(props) {
       sportEvent.homeTeam?.slug === homeTeamSlug ||
       sportEvent.homeTeam === null,
   );
-  console.log('findEventInformations', findEventInformations);
 
   return (
     <section className="flex flex-col items-center mt-8">

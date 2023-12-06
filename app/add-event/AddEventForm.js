@@ -25,7 +25,7 @@ export default function AddEventForm() {
           };
           addEvent(newEvent);
           router.push(`/events`);
-          console.log('newEvent', newEvent);
+
         }}
       >
         <label className="mb-4 flex">
