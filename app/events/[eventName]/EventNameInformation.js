@@ -29,12 +29,17 @@ export default function EventNameInformation(props) {
       <div className="text-center">
         Result
         <div className="flex flex-col">
-          {findEventInformations.homeTeam?.officialName || 'to be confirmed'}{' '}
-          {`(${findEventInformations.homeTeam?.teamCountryCode || 'tbc'})`}{' '}
-          {findEventInformations.result?.homeGoals} <spans>vs.</spans>{' '}
-          {findEventInformations.awayTeam?.officialName || 'to be confirmed'}{' '}
-          {`(${findEventInformations.awayTeam?.teamCountryCode})` || ''}{' '}
-          {findEventInformations.result?.awayGoals}
+          <div>
+            {findEventInformations.homeTeam?.officialName || 'to be confirmed'}{' '}
+            {`(${findEventInformations.homeTeam?.teamCountryCode || 'tbc'})`}{' '}
+            {findEventInformations.result?.homeGoals}
+          </div>
+          <spans>vs.</spans>{' '}
+          <div>
+            {findEventInformations.awayTeam?.officialName || 'to be confirmed'}{' '}
+            {`(${findEventInformations.awayTeam?.teamCountryCode})` || ''}{' '}
+            {findEventInformations.result?.awayGoals}
+          </div>
         </div>
       </div>
     </section>
