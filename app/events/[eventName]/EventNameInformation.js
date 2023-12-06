@@ -33,14 +33,15 @@ export default function EventNameInformation(props) {
         Competition {findEventInformations?.originCompetitionName}{' '}
         {findEventInformations?.season}
       </div>
-      <div className="mb-2">{findEventInformations.stage.id}</div>
-      <div className="mb-2 text-center">
-        {findEventInformations.status} at {findEventInformations.timeVenueUTC}{' '}
-        on {findEventInformations.dateVenue}
-      </div>
-      <div className="text-center mt-4">
+      <div className="mb-2 text-sm">{findEventInformations.stage.id}</div>
+
+      <div className="text-center mt-4 text-xl">
         Result
-        <div className="flex flex-col bg-blue-800 mt-4 p-8 shadow-sm">
+        <div className="mb-2 text-center text-xs mt-2">
+          {findEventInformations.status} at {findEventInformations.timeVenueUTC}{' '}
+          on {findEventInformations.dateVenue}
+        </div>
+        <div className="flex flex-col bg-blue-800 mt-4 p-8 shadow-sm text-2xl">
           <div>
             {findEventInformations.homeTeam?.officialName.toUpperCase() ||
               'to be confirmed'}{' '}
