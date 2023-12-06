@@ -1,4 +1,5 @@
 'use client';
+import { notFound } from 'next/navigation';
 import { useAppContext } from '../../AppProvider';
 
 export default function EventNameInformation(props) {
@@ -23,14 +24,10 @@ export default function EventNameInformation(props) {
         Competition {findEventInformations.originCompetitionName}{' '}
         {findEventInformations.season}
       </div>
-      <div className="mb-2">
-        {findEventInformations.dateVenue} {findEventInformations.timeVenueUTC}
-      </div>
-      <div className="mb-2">
-        {findEventInformations.stage.id}
-        {findEventInformations.result !== null
-          ? ' (played)'
-          : ' (to be played)'}
+      <div className="mb-2">{findEventInformations.stage.id}</div>
+      <div className="mb-2 text-center">
+        {findEventInformations.status} at {findEventInformations.timeVenueUTC}{' '}
+        on {findEventInformations.dateVenue}
       </div>
       <div className="text-center">
         Result
@@ -42,7 +39,7 @@ export default function EventNameInformation(props) {
             </span>
             {findEventInformations.result?.homeGoals}
           </div>
-          <spans>vs.</spans>{' '}
+          <span>vs.</span>
           <div>
             {findEventInformations.awayTeam?.officialName || 'to be confirmed'}{' '}
             <span className="text-sm">
