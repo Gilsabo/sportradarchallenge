@@ -1,5 +1,6 @@
 import './globals.css';
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import { AppProvider } from './AppProvider';
 
 export const metadata = {
@@ -7,9 +8,13 @@ export const metadata = {
   description: 'Sport radar challenge',
 };
 
-export default function RootLayout({ children }) {
+export type Props = {
+  children: ReactNode;
+};
+
+export default function RootLayout(props: Props) {
   return (
-    <html lang="en">
+    <html lang="eng">
       <body className="bg-blue-900 text-white">
         <div className="flex flex-col items-center mt-12">
           <Link href="/">
@@ -32,7 +37,7 @@ export default function RootLayout({ children }) {
             </Link>
           </nav>
         </div>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>{props.children}</AppProvider>
       </body>
     </html>
   );
