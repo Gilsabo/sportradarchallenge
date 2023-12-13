@@ -36,15 +36,16 @@ export default function EventsInformation() {
 
   return (
     <>
-      <section className="flex flex-wrap justify-center mt-8">
+      <section className="sm:flex sm:flex-wrap mx-8 my-8">
         {calendarWithEvents.map((calendarWithEvent) => {
           return calendarWithEvent.homeTeam && calendarWithEvent.awayTeam ? (
             <Link
+              className="flex sm:w-1/3 md:w-1/4"
               href={`events/${calendarWithEvent.homeTeamSlug}-vs-${calendarWithEvent.awayTeamSlug}`}
             >
               <div
                 key={`event-div${calendarWithEvent.homeTeam}-vs${calendarWithEvent.awayTeam}`}
-                className="relative p-6 w-80 md:w-72 lg:w-56 h-44 lg:h-32 mx-2 my-2 shadow-sm bg-blue-800 shadow-blue-800"
+                className="relative flex-grow p-6 h-40 mx-2 my-2 shadow-sm bg-blue-800 shadow-blue-800"
               >
                 <div className="text-xs absolute">
                   {calendarWithEvent.dateVenue}
@@ -60,6 +61,7 @@ export default function EventsInformation() {
             </Link>
           ) : (
             <Link
+              className="flex sm:w-1/3 md:w-1/4"
               href={`events/${
                 calendarWithEvent.homeTeam
                   ? calendarWithEvent.homeTeamSlug
@@ -80,7 +82,7 @@ export default function EventsInformation() {
                     ? calendarWithEvent.awayTeam.officialName
                     : ''
                 }`}
-                className="relative p-6 w-80 md:w-72 lg:w-56 h-44 lg:h-32 mx-2 my-2 shadow-sm bg-blue-800 shadow-blue-800"
+                className="relative flex-grow p-6 h-40  mx-2 my-2 shadow-sm bg-blue-800 shadow-blue-800"
               >
                 <div className="text-xs absolute">
                   {calendarWithEvent.dateVenue}
