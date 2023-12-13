@@ -40,7 +40,7 @@ export default function EventsInformation() {
         {calendarWithEvents.map((calendarWithEvent) => {
           return calendarWithEvent.homeTeam && calendarWithEvent.awayTeam ? (
             <Link
-              className="flex sm:w-1/3 md:w-1/4"
+              className="flex sm:w-1/3 lg:w-1/4"
               href={`events/${calendarWithEvent.homeTeamSlug}-vs-${calendarWithEvent.awayTeamSlug}`}
             >
               <div
@@ -61,7 +61,7 @@ export default function EventsInformation() {
             </Link>
           ) : (
             <Link
-              className="flex sm:w-1/3 md:w-1/4"
+              className="flex sm:w-1/3 lg:w-1/4"
               href={`events/${
                 calendarWithEvent.homeTeam
                   ? calendarWithEvent.homeTeamSlug
