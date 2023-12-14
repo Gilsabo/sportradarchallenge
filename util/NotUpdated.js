@@ -2,7 +2,7 @@
 
 export default function NotUpdated() {
   return (
-    <main className="flex justify-center mt-36 text-2xl text-center">
+    <main className="text-2xl text-center mt-8">
       This information is not available yet
     </main>
   );
