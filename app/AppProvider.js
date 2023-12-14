@@ -6,8 +6,9 @@ import sportData from '../public/sportData.json';
 const AppContext = createContext();
 // Create a provider component
 export const AppProvider = ({ children }) => {
+  // Information that will be passed
   const [sportEvents, setSportEvents] = useState(sportData.data);
-  // Function and values that are needed
+
   const addEvent = (newEvent) => {
     setSportEvents([...sportEvents, newEvent]);
   };
