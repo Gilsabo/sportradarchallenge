@@ -1,6 +1,6 @@
 'use client';
-import NotUpdated from '@/util/NotUpdated';
 import NotScheduled from '../../../util/NotScheduled';
+import NotUpdated from '../../../util/NotUpdated';
 import { useAppContext } from '../../AppProvider';
 
 export default function EventNameInformation(props) {

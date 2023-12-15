@@ -1,9 +1,15 @@
 'use client';
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import sportData from '../public/sportData.json';
 
+interface AppContextValue {
+  addEvent: (newEvent: any) => void;
+  sportEvents: any[];
+  setSportEvents: React.Dispatch<React.SetStateAction<any[]>>;
+}
+
 // Create the context
-const AppContext = createContext();
+const AppContext = createContext<AppContextValue>({} as AppContextValue);
 // Create a provider component
 export const AppProvider = ({ children }) => {
   // Information that will be passed
