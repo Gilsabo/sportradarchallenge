@@ -25,8 +25,7 @@ export default function EventNameInformation(props) {
 
   const findEventInformations = sportEvents.find(
     (sportEvent) =>
-      sportEvent.homeTeam?.slug === homeTeamSlug ||
-      sportEvent.homeTeam === null,
+      sportEvent.homeTeam?.slug === homeTeamSlug || !sportEvent.homeTeam,
   );
 
   return (
